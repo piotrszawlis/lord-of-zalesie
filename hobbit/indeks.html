@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Słownik elficki</title>
+</head>
+<body>
+
+<h2>Odpowiedz na zagadkę</h2>
+
+<input id="inputWord" type="text" placeholder="Wpisz polskie słowo">
+<button id="btn">Sprawdź odpowiedź</button>
+
+<p id="result"></p>
+
+<script>
+  const dictionary = {
+    "wiatr": "Sûl",
+    "księżyc": "Ithil",
+    "cień": "Gwath",
+    "ogień": "Naúr",
+    "pierścień": "Corf",
+    "słowo": "Peth",
+    "pajęczyna": "Lhingril",
+    "piosenka": "Linnod",
+    "atrament": "Môr"
+  };
+
+  document.getElementById("btn").addEventListener("click", function () {
+    const input = document.getElementById("inputWord").value.trim().toLowerCase();
+    const output = document.getElementById("result");
+
+    if (dictionary[input]) {
+      output.textContent = "Elfi: " + dictionary[input];
+    } else {
+      output.textContent = "BŁĄD: zła odpowiedź";
+    }
+  });
+</script>
+
+</body>
+</html>
